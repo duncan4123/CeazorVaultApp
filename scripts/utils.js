@@ -16,3 +16,4 @@ export function maybeChecksumAddress(address) {
 
   return false;
 }
+// no change
