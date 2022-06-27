@@ -6,127 +6,40 @@ import WalletLink from 'walletlink';
 import { CloverConnector } from '@clover-network/clover-connector';
 import { allNetworks } from '../../network';
 import {
-  avalanchePools,
-  avalancheStakePools,
-  avaxAddressBook,
-  avalancheZaps,
-  bscPools,
-  bscStakePools,
-  bscAddressBook,
-  bscZaps,
   fantomPools,
   fantomStakePools,
   fantomAddressBook,
   fantomZaps,
-  hecoPools,
-  hecoStakePools,
-  hecoAddressBook,
-  hecoZaps,
   nativeCoins,
   polygonPools,
   polygonStakePools,
   polygonAddressBook,
   polygonZaps,
-  celoPools,
-  celoStakePools,
-  celoAddressBook,
-  celoZaps,
-  moonriverPools,
-  moonriverStakePools,
-  moonriverAddressBook,
-  moonriverZaps,
-  harmonyPools,
-  harmonyStakePools,
-  harmonyAddressBook,
-  harmonyZaps,
-  cronosPools,
-  cronosStakePools,
-  cronosAddressBook,
-  cronosZaps,
-  auroraPools,
-  auroraStakePools,
-  auroraAddressBook,
-  auroraZaps,
   arbitrumPools,
   arbitrumStakePools,
   arbitrumAddressBook,
   arbitrumZaps,
-  fusePools,
-  fuseStakePools,
-  fuseAddressBook,
-  fuseZaps,
-  metisPools,
-  metisStakePools,
-  metisAddressBook,
-  metisZaps,
-  moonbeamPools,
-  moonbeamStakePools,
-  moonbeamAddressBook,
-  moonbeamZaps,
-  emeraldPools,
-  emeraldStakePools,
-  emeraldAddressBook,
-  emeraldZaps,
 } from '../configure';
 
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
 const networkTxUrls = {
-  56: hash => `https://bscscan.com/tx/${hash}`,
-  128: hash => `https://hecoinfo.com/tx/${hash}`,
-  43114: hash => `https://snowtrace.io/tx/${hash}`,
   137: hash => `https://polygonscan.com/tx/${hash}`,
   250: hash => `https://ftmscan.com/tx/${hash}`,
-  1666600000: hash => `https://explorer.harmony.one/tx/${hash}`,
   42161: hash => `https://arbiscan.io/tx/${hash}`,
-  42220: hash => `https://explorer.celo.org/tx/${hash}`,
-  1285: hash => `https://moonriver.moonscan.io/tx/${hash}`,
-  25: hash => `https://cronos.crypto.org/explorer/tx/${hash}`,
-  1313161554: hash => `https://explorer.mainnet.aurora.dev/tx/${hash}`,
-  122: hash => `https://explorer.fuse.io/tx/${hash}`,
-  1088: hash => `https://andromeda-explorer.metis.io/tx/${hash}`,
-  1284: hash => `https://moonscan.io/tx/${hash}`,
-  42262: hash => `https://explorer.emerald.oasis.dev/tx/${hash}`,
 };
 
 const networkFriendlyName = {
-  56: 'BSC',
-  128: 'HECO',
-  43114: 'AVAX',
   137: 'Polygon',
   250: 'Fantom',
-  1666600000: 'Harmony',
   42161: 'Arbitrum',
-  42220: 'Celo',
-  1285: 'Moonriver',
-  25: 'Cronos',
-  1313161554: 'Aurora',
-  122: 'Fuse',
-  1088: 'Metis',
-  1284: 'Moonbeam',
-  42262: 'Oasis Emerald',
 };
 
 const networkBuyUrls = {
-  56: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
-  128: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a&outputCurrency=0x765277eebeca2e31912c9946eae1021199b39c61',
   137: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   250: 'https://spooky.fi/#/swap?inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&outputCurrency=0xd6070ae98b8069de6B494332d1A1a81B6179D960',
-  43114:
-    'https://www.traderjoexyz.com/trade?outputCurrency=0xd6070ae98b8069de6b494332d1a1a81b6179d960',
-  1666600000:
-    'https://app.sushi.com/swap?inputCurrency=0x6ab6d61428fde76768d7b45d8bfeec19c6ef91a8&outputCurrency=0xcf664087a5bb0237a0bad6742852ec6c8d69a27a',
   42161:
     'https://app.sushi.com/swap?inputCurrency=0x82af49447d8a07e3bd95bd0d56f35241523fbab1&outputCurrency=0x99c409e5f62e4bd2ac142f17cafb6810b8f0baae',
-  42220:
-    'https://app.sushi.com/swap?inputCurrency=0x471ece3750da237f93b8e339c536989b8978a438&outputCurrency=0x639a647fbe20b6c8ac19e48e2de44ea792c62c5c',
-  1285: 'https://app.sushi.com/swap?inputCurrency=0x173fd7434b8b50df08e3298f173487ebdb35fd14&outputCurrency=0xf50225a84382c74cbdea10b0c176f71fc3de0c4d',
-  25: 'https://vvs.finance/swap?inputCurrency=0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23&outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
-  1313161554: '',
-  122: '',
-  1088: 'https://netswap.io/#/swap?outputCurrency=0xe6801928061cdbe32ac5ad0634427e140efd05f9',
-  1284: '',
-  42262: '',
 };
 
 export const getNetworkCoin = () => {
@@ -135,36 +48,12 @@ export const getNetworkCoin = () => {
 
 export const getNetworkPools = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
-      return bscPools;
-    case 128:
-      return hecoPools;
-    case 43114:
-      return avalanchePools;
     case 137:
       return polygonPools;
     case 250:
       return fantomPools;
-    case 1666600000:
-      return harmonyPools;
     case 42161:
       return arbitrumPools;
-    case 42220:
-      return celoPools;
-    case 1285:
-      return moonriverPools;
-    case 25:
-      return cronosPools;
-    case 1313161554:
-      return auroraPools;
-    case 122:
-      return fusePools;
-    case 1088:
-      return metisPools;
-    case 1284:
-      return moonbeamPools;
-    case 42262:
-      return emeraldPools;
     default:
       return [];
   }
@@ -172,36 +61,12 @@ export const getNetworkPools = () => {
 
 export const getNetworkVaults = (networkId = appNetworkId) => {
   switch (networkId) {
-    case 56:
-      return indexBy(bscPools, 'id');
-    case 128:
-      return indexBy(hecoPools, 'id');
-    case 43114:
-      return indexBy(avalanchePools, 'id');
     case 137:
       return indexBy(polygonPools, 'id');
     case 250:
       return indexBy(fantomPools, 'id');
-    case 1666600000:
-      return indexBy(harmonyPools, 'id');
     case 42161:
       return indexBy(arbitrumPools, 'id');
-    case 42220:
-      return indexBy(celoPools, 'id');
-    case 1285:
-      return indexBy(moonriverPools, 'id');
-    case 25:
-      return indexBy(cronosPools, 'id');
-    case 1313161554:
-      return indexBy(auroraPools, 'id');
-    case 122:
-      return indexBy(fusePools, 'id');
-    case 1088:
-      return indexBy(metisPools, 'id');
-    case 1284:
-      return indexBy(moonbeamPools, 'id');
-    case 42262:
-      return indexBy(emeraldPools, 'id');
     default:
       return {};
   }
@@ -209,36 +74,13 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
 
 export const getNetworkLaunchpools = (networkId = appNetworkId) => {
   switch (networkId) {
-    case 56:
-      return indexBy(bscStakePools, 'id');
-    case 128:
-      return indexBy(hecoStakePools, 'id');
-    case 43114:
-      return indexBy(avalancheStakePools, 'id');
     case 137:
       return indexBy(polygonStakePools, 'id');
     case 250:
       return indexBy(fantomStakePools, 'id');
-    case 1666600000:
-      return indexBy(harmonyStakePools, 'id');
     case 42161:
       return indexBy(arbitrumStakePools, 'id');
     case 42220:
-      return indexBy(celoStakePools, 'id');
-    case 1285:
-      return indexBy(moonriverStakePools, 'id');
-    case 25:
-      return indexBy(cronosStakePools, 'id');
-    case 1313161554:
-      return indexBy(auroraStakePools, 'id');
-    case 122:
-      return indexBy(fuseStakePools, 'id');
-    case 1088:
-      return indexBy(metisStakePools, 'id');
-    case 1284:
-      return indexBy(moonbeamStakePools, 'id');
-    case 42262:
-      return indexBy(emeraldStakePools, 'id');
     default:
       return {};
   }
@@ -247,36 +89,12 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
 export const getNetworkTokens = () => {
   const chainId = window.REACT_APP_NETWORK_ID;
   switch (chainId) {
-    case 56:
-      return bscAddressBook.tokens;
-    case 128:
-      return hecoAddressBook.tokens;
-    case 43114:
-      return avaxAddressBook.tokens;
     case 137:
       return polygonAddressBook.tokens;
     case 250:
       return fantomAddressBook.tokens;
-    case 1666600000:
-      return harmonyAddressBook.tokens;
     case 42161:
       return arbitrumAddressBook.tokens;
-    case 42220:
-      return celoAddressBook.tokens;
-    case 1285:
-      return moonriverAddressBook.tokens;
-    case 25:
-      return cronosAddressBook.tokens;
-    case 1313161554:
-      return auroraAddressBook.tokens;
-    case 122:
-      return fuseAddressBook.tokens;
-    case 1088:
-      return metisAddressBook.tokens;
-    case 1284:
-      return moonbeamAddressBook.tokens;
-    case 42262:
-      return emeraldAddressBook.tokens;
     default:
       throw new Error(
         `Create address book for chainId(${chainId}) first. Check out https://github.com/beefyfinance/address-book`
@@ -286,21 +104,6 @@ export const getNetworkTokens = () => {
 
 export const getNetworkBurnTokens = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
-      return {
-        [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
-        [bscAddressBook.tokens.GUARD.symbol]: bscAddressBook.tokens.GUARD,
-        [bscAddressBook.tokens.PEAR.symbol]: bscAddressBook.tokens.PEAR,
-        [bscAddressBook.tokens.SING.symbol]: bscAddressBook.tokens.SING,
-      };
-    case 128:
-      return {};
-    case 43114:
-      return {
-        [avaxAddressBook.tokens.SHIBX.symbol]: avaxAddressBook.tokens.SHIBX,
-        [avaxAddressBook.tokens.aSING.symbol]: avaxAddressBook.tokens.aSING,
-        [avaxAddressBook.tokens.MEAD.symbol]: avaxAddressBook.tokens.MEAD,
-      };
     case 137:
       return {
         //  [polygonAddressBook.tokens.xYELD.symbol]: polygonAddressBook.tokens.xYELD,
@@ -339,36 +142,13 @@ export const getNetworkBurnTokens = () => {
 
 export const getNetworkZaps = () => {
   switch (window.REACT_APP_NETWORK_ID) {
-    case 56:
-      return bscZaps;
-    case 128:
-      return hecoZaps;
-    case 43114:
-      return avalancheZaps;
     case 137:
       return polygonZaps;
     case 250:
       return fantomZaps;
-    case 1666600000:
-      return harmonyZaps;
     case 42161:
       return arbitrumZaps;
     case 42220:
-      return celoZaps;
-    case 1285:
-      return moonriverZaps;
-    case 25:
-      return cronosZaps;
-    case 1313161554:
-      return auroraZaps;
-    case 122:
-      return fuseZaps;
-    case 1088:
-      return metisZaps;
-    case 1284:
-      return moonbeamZaps;
-    case 42262:
-      return emeraldZaps;
     default:
       return [];
   }

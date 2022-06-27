@@ -13,9 +13,9 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <div className={classes.column}>
-        <div className={classes.title}>beefy.finance</div>
+        <div className={classes.title}>Ceazor vaults</div>
         <a
-          href="https://docs.beefy.finance"
+          href="https://media.baamboozle.com/uploads/images/140218/1606822863_60420"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -25,7 +25,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://blog.beefy.finance/articles"
+          href="https://i.pinimg.com/originals/7f/b2/9b/7fb29b9a1b9cdc93ada43286b946d5ec.jpg"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -35,7 +35,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://forum.beefy.finance/"
+          href="https://c.tenor.com/CcH_tGa_lwAAAAAM/clap-fry.gif"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -45,7 +45,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://github.com/beefyfinance"
+          href="https://github.com/Ceazor/CeazorVaultApp"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -58,7 +58,7 @@ const Footer = () => {
       <div className={classes.column}>
         <div className={classes.title}>{t('products')}</div>
         <a
-          href="https://gov.beefy.finance"
+          href="https://www.burtschips.com/wp-content/uploads/vote-for-your-sandwich.jpg"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -91,7 +91,7 @@ const Footer = () => {
       <div className={classes.column}>
         <div className={classes.title}>{t('socials')}</div>
         <a
-          href="https://twitter.com/beefyfinance"
+          href="https://twitter.com/ceazor7"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -101,7 +101,7 @@ const Footer = () => {
           <span>twitter</span>
         </a>
         <a
-          href="https://t.me/beefyfinance"
+          href="https://t.me/ceazor"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -111,7 +111,7 @@ const Footer = () => {
           <span>telegram</span>
         </a>
         <a
-          href="https://discord.gg/yq8wfHd"
+          href="https://discord.gg/g7J9WYEV6K"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}

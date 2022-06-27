@@ -16,7 +16,6 @@ import NightsStay from '@material-ui/icons/NightsStay';
 import { getNetworkBuyUrl } from '../../features/helpers/getNetworkData';
 import { Dialog, withStyles } from '@material-ui/core';
 import CustomButton from '../../components/CustomButtons/Button';
-import Transak from '../Transak/Transak';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
@@ -49,17 +48,17 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Button className={classes.title}>
             <Hidden xsDown>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="Ceazor"
+                src={require(`images/CEAZOR.svg`)}
                 height={'40px'}
                 className={classes.logo}
               />
-              beefy.finance
+              Ceazor Vaults
             </Hidden>
             <Hidden smUp>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="Ceazor"
+                src={require(`images/CEAZOR.svg`)}
                 height={'35px'}
                 className={classes.logo}
               />
@@ -75,13 +74,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             {renderLink('blog', t('blog'), 'file-alt', classes)}
             <InsureLink t={t} classes={classes} />
           </Hidden>
-          <Transak style={{ marginLeft: '5px', marginRight: '5px' }} className={classes.link}>
-            <i className={`fas fa-credit-card ${classes.icon}`} />
-            {t('buy')}
-          </Transak>
-          <Link className={classes.btnBoost} to={`/${chain}/stake`}>
-            <img alt="Boost" src={require('images/stake/boost.svg')} />
-          </Link>
         </div>
 
         <Hidden smDown implementation="css">
@@ -124,10 +116,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
             <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
             <InsureLinkSidebar key="insure" t={t} classes={classes} />
-            <Transak style={{ width: '100%', paddingTop: '10px' }} className={classes.link}>
-              <i className={`fas fa-credit-car ${classes.icon}`} />
-              {t('buy')}
-            </Transak>
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
@@ -186,7 +174,7 @@ const InsureLink = memo(function InsureLink({ t, classes }) {
             ))}
           </div>
           <CustomButton
-            href="https://app.insurace.io/Insurance/Cart?id=110&chain=BSC&referrer=95244279533280151623141934507761661103282646845"
+            href="https://d1dlh1v05qf6d3.cloudfront.net/information/uploads/2018/02/ham-sandwich-better.jpg"
             target="_blank"
             className={classes.modalButton}
           >

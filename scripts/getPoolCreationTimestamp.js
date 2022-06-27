@@ -3,21 +3,9 @@ import Web3 from 'web3';
 import { chainPools, chainRpcs } from './config.js';
 
 const explorerApiUrls = {
-  cronos: 'https://api.cronoscan.com/api',
-  bsc: 'https://api.bscscan.com/api',
   polygon: 'https://api.polygonscan.com/api',
   fantom: 'https://api.ftmscan.com/api',
-  heco: 'https://api.hecoinfo.com/api',
-  avax: 'https://api.snowtrace.io//api',
-  moonbeam: 'https://api-moonbeam.moonscan.io/api',
-  celo: 'https://explorer.celo.org/',
-  moonriver: 'https://api-moonriver.moonscan.io/api',
   arbitrum: 'https://api.arbiscan.io/api',
-  aurora: 'https://api.aurorascan.dev/api',
-  metis: 'https://andromeda-explorer.metis.io/',
-  one: 'https://explorer.harmony.one/',
-  fuse: 'https://explorer.fuse.io/',
-  emerald: 'https://explorer.emerald.oasis.dev/',
 };
 
 const blockScoutChainsTimeout = new Set(['fuse', 'metis', 'celo', 'emerald']);

@@ -19,12 +19,7 @@ const V2Banner = () => {
         <Typography className={classes.title}>{t('V2Banner-Title')}</Typography>
         <Typography className={classes.text}>{t('V2Banner-Text')}</Typography>
       </Box>
-      <a
-        className={classes.btn}
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://beta.beefy.finance/#/"
-      >
+      <a className={classes.btn} target="_blank" rel="noopener noreferrer" href="">
         {t('V2Banner-Button')}
       </a>
     </Grid>
