@@ -68,10 +68,10 @@ const Header = ({ links, isNightMode, setNightMode }) => {
 
         <div className={classes.middleNav}>
           <Hidden smDown>
-            {renderLink('vote', t('vote'), 'vote-yea', classes)}
+            {/* {renderLink('vote', t('vote'), 'vote-yea', classes)}
             {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
             {renderLink('docs', t('docs'), 'book', classes)}
-            {renderLink('blog', t('blog'), 'file-alt', classes)}
+            {renderLink('blog', t('blog'), 'file-alt', classes)} */}
             <InsureLink t={t} classes={classes} />
           </Hidden>
         </div>
